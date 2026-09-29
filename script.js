@@ -181,6 +181,32 @@
   }
   scrubGroups.forEach(litWords);
 
+  /* ---------- Stats: rolling digit counters ---------- */
+  function buildReels(el) {
+    var text = Number(el.getAttribute('data-count')).toLocaleString('en-IN');
+    var suffix = el.getAttribute('data-suffix') || '';
+    el.setAttribute('aria-label', text + suffix);
+    var digits = 0;
+    el.innerHTML = text.split('').map(function (ch) {
+      if (!/\d/.test(ch)) return '<span aria-hidden="true">' + ch + '</span>';
+      var strip = '';
+      for (var i = 0; i <= 9; i++) strip += '<span>' + i + '</span>';
+      return '<span class="reel" aria-hidden="true"><span class="reel-strip" data-digit="' + ch + '" style="--d:' + (digits++ * 0.08) + 's">' + strip + '</span></span>';
+    }).join('') + (suffix ? '<span class="sfx" aria-hidden="true">' + suffix + '</span>' : '');
+    return $$('.reel-strip', el);
+  }
+  function rollTo(strips) { strips.forEach(function (s) { s.style.transform = 'translateY(calc(var(--row) * ' + (-s.getAttribute('data-digit')) + '))'; }); }
+  $$('[data-count]').forEach(function (el) {
+    var strips = buildReels(el);
+    if (reduce || !('IntersectionObserver' in window)) { strips.forEach(function (s) { s.style.transition = 'none'; }); rollTo(strips); return; }
+    var io = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      io.disconnect();
+      requestAnimationFrame(function () { rollTo(strips); });
+    }, { threshold: 0.6 });
+    io.observe(el);
+  });
+
   /* ---------- Contact form (Web3Forms) ---------- */
   initForm();
 

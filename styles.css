@@ -226,6 +226,20 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
 .intro-sub { font-size: 1.125rem; color: var(--slate); max-width: 52ch; margin: 0; }
 .intro-figure { aspect-ratio: 4 / 5; }
 
+/* ---------- Stats ---------- */
+.stats { background: var(--ice); padding: 0 0 var(--section); }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--ice-2); }
+.stat { padding: 32px 24px 0 0; }
+.stat + .stat { padding-left: 24px; border-left: 1px solid var(--ice-2); }
+.stat-num { display: flex; align-items: baseline; margin: 0 0 10px; font-size: clamp(2.5rem, 4.6vw, 4rem); font-weight: 600; letter-spacing: -0.045em; line-height: 1; color: var(--ink); font-feature-settings: "tnum"; }
+.stat-num .sfx { color: var(--reefer-deep); }
+.stat-label { margin: 0; font-family: var(--mono); font-size: 0.8125rem; color: var(--slate); }
+/* Rolling digits: each digit is a 0-9 strip clipped to one line and slid into place */
+.stat-num { --row: 1.15em; }
+.reel { display: inline-block; height: var(--row); overflow: hidden; -webkit-mask-image: linear-gradient(transparent, #000 18%, #000 82%, transparent); mask-image: linear-gradient(transparent, #000 18%, #000 82%, transparent); }
+.reel-strip { display: flex; flex-direction: column; transition: transform 1.6s var(--ease); transition-delay: var(--d, 0s); }
+.reel-strip span { height: var(--row); line-height: var(--row); }
+
 /* ---------- Platform panels ---------- */
 .platform { background: var(--night); color: var(--white); padding: var(--section) 0; position: relative; overflow: hidden; }
 .platform::before {
@@ -584,6 +598,11 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
   .principle::before { left: 22px; right: 22px; }
   .principle h3 { font-size: 1.375rem; }
   .p-icon { margin-bottom: 28px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stat { padding: 28px 16px 28px 0; }
+  .stat + .stat { padding-left: 0; border-left: 0; }
+  .stat:nth-child(even) { padding-left: 20px; border-left: 1px solid var(--ice-2); }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--ice-2); }
   .contact-route { margin-top: 32px; }
 
   /* Map: keep it a sensible size once it drops below the copy */
