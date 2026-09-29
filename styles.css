@@ -561,8 +561,7 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px); }
     position: fixed; inset: 0; z-index: -1; flex-direction: column; align-items: stretch; justify-content: center; gap: 32px;
     height: 100vh; height: 100dvh; overflow-y: auto; overscroll-behavior: contain;
     padding: calc(100px + env(safe-area-inset-top)) var(--gutter) calc(40px + env(safe-area-inset-bottom));
-    background: rgba(7,23,34,.97);
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    background: var(--night);
     opacity: 0; visibility: hidden; transition: opacity .45s var(--ease), visibility .45s;
   }
   .nav.open { opacity: 1; visibility: visible; }
