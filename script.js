@@ -101,6 +101,16 @@
   panels.forEach(function (p) {
     p.addEventListener('mouseenter', function () { activatePanel(p); });
     p.addEventListener('focus', function () { activatePanel(p); });
+    /* Touch screens with the side-by-side layout: first tap opens a panel, second tap follows the link.
+       State is read on touchstart because the emulated mouseenter activates the panel before click fires. */
+    var wasActive = true;
+    p.addEventListener('touchstart', function () { wasActive = p.classList.contains('is-active'); }, { passive: true });
+    p.addEventListener('click', function (e) {
+      if (!wasActive && window.matchMedia('(hover: none) and (min-width: 961px)').matches) {
+        wasActive = true;
+        e.preventDefault(); e.stopImmediatePropagation(); activatePanel(p);
+      }
+    }, true); /* capture, so it runs before the smooth-scroll handler */
   });
 
   /* ---------- Accordion ---------- */
@@ -190,7 +200,9 @@
 
   /* Hero entrance */
   animate('.hero-media img', { opacity: [0, 1], scale: [1.14, 1] }, { duration: 2.2, ease: EASE });
-  animate(header, { opacity: [0, 1], y: [-12, 0] }, { duration: 0.7, delay: 0.3, ease: EASE });
+  /* Clear the transform afterwards: a transformed header would trap the fixed mobile menu inside it */
+  animate(header, { opacity: [0, 1], y: [-12, 0] }, { duration: 0.7, delay: 0.3, ease: EASE })
+    .then(function () { header.style.transform = ''; });
   animate('[data-hero="eyebrow"]', { opacity: [0, 1], y: [12, 0] }, { duration: 0.6, delay: 0.45, ease: EASE });
   animate(heroWords, { y: ['110%', '0%'] }, { duration: 1, delay: stagger(0.06, { startDelay: 0.55 }), ease: EASE });
   var afterTitle = 0.55 + heroWords.length * 0.06 + 0.25;
