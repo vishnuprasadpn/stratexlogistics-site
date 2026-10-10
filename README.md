@@ -32,7 +32,7 @@ All asset links are root-relative (`/styles.css`), so preview locally with a web
 2. **Photos**: the current images are free Unsplash photos, hotlinked from images.unsplash.com. They are generic port and warehouse imagery, not Stratex facilities. Replace them with the client's own photos when available (search for `images.unsplash.com` in index.html). Credits: CHUTTERSNAP (hero), Russ Murray (warehouse aisle), Vida Huang (pallets), Bernd Dittrich (containers), Bent Van Aeken (ship), Haris Illahi (port aerial).
 3. **Contact details**: phone and email appear in the footer of every page, the home page contact section and `contact/index.html`. An office address can be added in the same places when available.
 5. **Stats**: the figures in the home page `STATS` section are placeholders.
-6. **Testimonials**: the quotes in the home page `TESTIMONIALS` section are samples, not real client feedback. Replace them with genuine, approved quotes (or remove the section) before publishing.
+6. **Testimonials**: the quotes in the home page `TESTIMONIALS` section are samples, not real client feedback. The section is switched off with the `hidden` attribute. Replace the quotes with genuine, approved ones, then delete `hidden` to show it.
 7. **Social profiles**: the footer has LinkedIn, Instagram, Facebook and X icons with `href="#"`. They stay hidden until the `#` is replaced with the profile URL.
 4. **Logo**: the mark in the header and footer is a placeholder SVG. Swap it for the client's logo.
 
