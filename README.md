@@ -2,9 +2,26 @@
 
 Static site for Stratex Logistics. No build step: push these files to GitHub Pages as-is.
 
+## Pages
+Each page is a plain HTML file served at a clean URL:
+
+| URL | File |
+|---|---|
+| `/` | `index.html` (overview with short teasers) |
+| `/cold-chain/` | `cold-chain/index.html` |
+| `/infrastructure/` | `infrastructure/index.html` |
+| `/customs-clearance/` | `customs-clearance/index.html` |
+| `/freight-forwarding/` | `freight-forwarding/index.html` |
+| `/about/` | `about/index.html` |
+| `/contact/` | `contact/index.html` (enquiry form) |
+| any missing URL | `404.html` |
+
+The header, footer and contact details are repeated in every page. When changing the menu, phone, email or social links, update all eight files (search and replace across the folder). Add any new page to `sitemap.xml`.
+
+All asset links are root-relative (`/styles.css`), so preview locally with a web server rather than opening the file directly: `python3 -m http.server` then visit http://localhost:8000.
+
 ## Files
-- `index.html`: all page content
-- `styles.css`: design system and layout
+- `styles.css`: design system and layout for every page
 - `script.js`: interactions and animations
 - `js/motion.min.js`: Motion animation library (v11.18.2, MIT), bundled locally so the site has no runtime CDN dependency
 - `favicon.svg`, `robots.txt`, `sitemap.xml`
@@ -13,7 +30,10 @@ Static site for Stratex Logistics. No build step: push these files to GitHub Pag
 ## Before going live
 1. **Contact form**: get a free access key at https://web3forms.com using the admin email, then replace `YOUR_WEB3FORMS_ACCESS_KEY` in `index.html`.
 2. **Photos**: the current images are free Unsplash photos, hotlinked from images.unsplash.com. They are generic port and warehouse imagery, not Stratex facilities. Replace them with the client's own photos when available (search for `images.unsplash.com` in index.html). Credits: CHUTTERSNAP (hero), Russ Murray (warehouse aisle), Vida Huang (pallets), Bernd Dittrich (containers), Bent Van Aeken (ship), Haris Illahi (port aerial).
-3. **Contact details**: a commented-out block for email, phone and office address sits in the contact section of `index.html`. Uncomment and fill it in when the client provides these.
+3. **Contact details**: phone and email appear in the footer of every page, the home page contact section and `contact/index.html`. An office address can be added in the same places when available.
+5. **Stats**: the figures in the home page `STATS` section are placeholders.
+6. **Testimonials**: the quotes in the home page `TESTIMONIALS` section are samples, not real client feedback. Replace them with genuine, approved quotes (or remove the section) before publishing.
+7. **Social profiles**: the footer has LinkedIn, Instagram, Facebook and X icons with `href="#"`. They stay hidden until the `#` is replaced with the profile URL.
 4. **Logo**: the mark in the header and footer is a placeholder SVG. Swap it for the client's logo.
 
 ## Deploy (GitHub Pages)

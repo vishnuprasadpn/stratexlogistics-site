@@ -11,17 +11,17 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Stratex Logistics">
   <meta property="og:title" content="Stratex Logistics | Engineering confidence across the supply chain">
-  <meta property="og:description" content="Temperature-controlled warehousing, customs clearance and freight forwarding across India's trade and port corridors.">
+  <meta property="og:description" content="Stratex Logistics is an integrated logistics and infrastructure company focused on temperature-controlled warehousing, customs clearance and strategic cargo movement across key trade and port-connected locations in India.">
   <meta property="og:url" content="https://stratexlogistics.com/">
   <meta property="og:image" content="https://images.unsplash.com/photo-1508404999913-79a3a2e75437?auto=format&fit=crop&q=72&w=1200&h=630">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
 
   <script>
     document.documentElement.classList.add('js');
@@ -29,29 +29,80 @@
   </script>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://stratexlogistics.com/#org",
-        "name": "Stratex Logistics",
-        "url": "https://stratexlogistics.com/",
-        "logo": "https://stratexlogistics.com/favicon.svg",
-        "slogan": "Built for what moves next.",
-        "description": "Integrated logistics and infrastructure company focused on temperature-controlled warehousing, customs clearance and strategic cargo movement in India."
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://stratexlogistics.com/#org",
+      "name": "Stratex Logistics",
+      "url": "https://stratexlogistics.com/",
+      "logo": "https://stratexlogistics.com/favicon.svg",
+      "email": "info@stratexlogistics.com",
+      "telephone": "+919567289308",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+919567289308",
+        "email": "info@stratexlogistics.com",
+        "areaServed": "IN",
+        "availableLanguage": [
+          "English"
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://stratexlogistics.com/",
+      "name": "Stratex Logistics",
+      "publisher": {
+        "@id": "https://stratexlogistics.com/#org"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Cold chain and temperature-controlled warehousing",
+      "serviceType": "Cold chain and temperature-controlled warehousing",
+      "description": "Temperature-controlled warehousing designed to protect product integrity.",
+      "url": "https://stratexlogistics.com/cold-chain/",
+      "provider": {
+        "@id": "https://stratexlogistics.com/#org"
       },
-      {
-        "@type": "WebSite",
-        "url": "https://stratexlogistics.com/",
-        "name": "Stratex Logistics",
-        "publisher": { "@id": "https://stratexlogistics.com/#org" }
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Customs clearance",
+      "serviceType": "Customs clearance",
+      "description": "Import and export customs clearance, documentation and port coordination.",
+      "url": "https://stratexlogistics.com/customs-clearance/",
+      "provider": {
+        "@id": "https://stratexlogistics.com/#org"
       },
-      { "@type": "Service", "serviceType": "Cold chain and temperature-controlled warehousing", "provider": { "@id": "https://stratexlogistics.com/#org" }, "areaServed": "IN" },
-      { "@type": "Service", "serviceType": "Customs clearance", "provider": { "@id": "https://stratexlogistics.com/#org" }, "areaServed": "IN" },
-      { "@type": "Service", "serviceType": "Freight forwarding", "provider": { "@id": "https://stratexlogistics.com/#org" }, "areaServed": "IN" }
-    ]
-  }
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Freight forwarding",
+      "serviceType": "Freight forwarding",
+      "description": "Ocean freight and cargo coordination from origin to destination.",
+      "url": "https://stratexlogistics.com/freight-forwarding/",
+      "provider": {
+        "@id": "https://stratexlogistics.com/#org"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -60,21 +111,21 @@
   <!-- ============ HEADER ============ -->
   <header class="header" id="header">
     <div class="wrap header-inner">
-      <a class="brand" href="#top" aria-label="Stratex Logistics home">
+      <a class="brand" href="/" aria-label="Stratex Logistics home">
         <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="currentColor" opacity=".12"/><rect x="7" y="8" width="18" height="4" rx="1" fill="currentColor"/><rect x="7" y="14" width="12" height="4" rx="1" fill="#2AA7D6"/><rect x="13" y="20" width="12" height="4" rx="1" fill="currentColor"/></svg>
         <span class="brand-text"><strong>Stratex</strong> Logistics</span>
       </a>
 
       <nav class="nav" id="nav" aria-label="Main">
         <ul class="nav-list">
-          <li><a href="#cold-chain" data-nav>Cold chain</a></li>
-          <li><a href="#infrastructure" data-nav>Infrastructure</a></li>
-          <li><a href="#customs" data-nav>Customs</a></li>
-          <li><a href="#freight" data-nav>Freight</a></li>
-          <li><a href="#about" data-nav>About</a></li>
+          <li><a href="/cold-chain/">Cold chain</a></li>
+          <li><a href="/infrastructure/">Infrastructure</a></li>
+          <li><a href="/customs-clearance/">Customs</a></li>
+          <li><a href="/freight-forwarding/">Freight</a></li>
+          <li><a href="/about/">About</a></li>
         </ul>
         <span class="nav-indicator" aria-hidden="true"></span>
-        <a class="btn btn-accent btn-sm nav-cta" href="#contact">Send an enquiry <span class="arrow" aria-hidden="true"></span></a>
+        <a class="btn btn-accent btn-sm nav-cta" href="/contact/">Send an enquiry <span class="arrow" aria-hidden="true"></span></a>
       </nav>
 
       <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">
@@ -85,7 +136,6 @@
 
   <main id="main">
 
-    <!-- ============ HERO ============ -->
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="hero-media" aria-hidden="true">
         <img src="https://images.unsplash.com/photo-1508404999913-79a3a2e75437?auto=format&fit=crop&q=72&w=1600" srcset="https://images.unsplash.com/photo-1508404999913-79a3a2e75437?auto=format&fit=crop&q=72&w=640 640w, https://images.unsplash.com/photo-1508404999913-79a3a2e75437?auto=format&fit=crop&q=72&w=1024 1024w, https://images.unsplash.com/photo-1508404999913-79a3a2e75437?auto=format&fit=crop&q=72&w=1600 1600w, https://images.unsplash.com/photo-1508404999913-79a3a2e75437?auto=format&fit=crop&q=72&w=2400 2400w" sizes="100vw" alt="" loading="eager" decoding="async" fetchpriority="high">
@@ -105,8 +155,8 @@
           <h1 id="hero-title" class="hero-title" data-split>Engineering confidence across the supply chain.</h1>
           <p class="hero-lede" data-hero="lede">Stratex Logistics is an integrated logistics and infrastructure company focused on temperature-controlled warehousing, customs clearance and strategic cargo movement.</p>
           <div class="hero-actions" data-hero="cta">
-            <a class="btn btn-accent" href="#contact">Send an enquiry <span class="arrow" aria-hidden="true"></span></a>
-            <a class="btn btn-glass" href="#infrastructure">Explore our network</a>
+            <a class="btn btn-accent" href="/contact/">Send an enquiry <span class="arrow" aria-hidden="true"></span></a>
+            <a class="btn btn-glass" href="/infrastructure/">Explore our network</a>
           </div>
         </div>
 
@@ -117,21 +167,21 @@
           </div>
           <ol class="manifest-list">
             <li>
-              <a href="#infrastructure" data-site-link="valsad">
+              <a href="/infrastructure/#valsad">
                 <span class="m-name">Valsad<small>Gujarat</small></span>
                 <span class="m-coord mono">20.61°N 72.93°E</span>
                 <span class="pill pill-dev">Under development</span>
               </a>
             </li>
             <li>
-              <a href="#infrastructure" data-site-link="gandhidham">
+              <a href="/infrastructure/#gandhidham">
                 <span class="m-name">Gandhidham<small>Gujarat</small></span>
                 <span class="m-coord mono">23.08°N 70.13°E</span>
                 <span class="pill pill-planned">Planned</span>
               </a>
             </li>
             <li>
-              <a href="#infrastructure" data-site-link="vizhinjam">
+              <a href="/infrastructure/#vizhinjam">
                 <span class="m-name">Vizhinjam<small>Kerala</small></span>
                 <span class="m-coord mono">8.38°N 76.99°E</span>
                 <span class="pill pill-planned">Planned</span>
@@ -193,7 +243,7 @@
         </div>
 
         <div class="panels" data-panels>
-          <a class="panel is-active" href="#cold-chain" data-panel>
+          <a class="panel is-active" href="/cold-chain/" data-panel>
             <div class="panel-media"><img src="https://images.unsplash.com/photo-1741655262435-4890ab9918fa?auto=format&fit=crop&q=72&w=1600" srcset="https://images.unsplash.com/photo-1741655262435-4890ab9918fa?auto=format&fit=crop&q=72&w=640 640w, https://images.unsplash.com/photo-1741655262435-4890ab9918fa?auto=format&fit=crop&q=72&w=1024 1024w, https://images.unsplash.com/photo-1741655262435-4890ab9918fa?auto=format&fit=crop&q=72&w=1600 1600w, https://images.unsplash.com/photo-1741655262435-4890ab9918fa?auto=format&fit=crop&q=72&w=2400 2400w" sizes="(max-width: 960px) 100vw, 50vw" alt="Pallets of goods stored in a warehouse" loading="lazy" decoding="async"></div>
             <div class="panel-body">
               <span class="panel-index mono">01</span>
@@ -202,7 +252,7 @@
               <span class="panel-link">Explore cold chain <span class="arrow" aria-hidden="true"></span></span></div></div>
             </div>
           </a>
-          <a class="panel" href="#customs" data-panel>
+          <a class="panel" href="/customs-clearance/" data-panel>
             <div class="panel-media"><img src="https://images.unsplash.com/photo-1703227373720-cff89520dd31?auto=format&fit=crop&q=72&w=1600" srcset="https://images.unsplash.com/photo-1703227373720-cff89520dd31?auto=format&fit=crop&q=72&w=640 640w, https://images.unsplash.com/photo-1703227373720-cff89520dd31?auto=format&fit=crop&q=72&w=1024 1024w, https://images.unsplash.com/photo-1703227373720-cff89520dd31?auto=format&fit=crop&q=72&w=1600 1600w, https://images.unsplash.com/photo-1703227373720-cff89520dd31?auto=format&fit=crop&q=72&w=2400 2400w" sizes="(max-width: 960px) 100vw, 50vw" alt="Stacked shipping containers with a crane spreader at a port terminal" loading="lazy" decoding="async"></div>
             <div class="panel-body">
               <span class="panel-index mono">02</span>
@@ -211,7 +261,7 @@
               <span class="panel-link">Explore customs <span class="arrow" aria-hidden="true"></span></span></div></div>
             </div>
           </a>
-          <a class="panel" href="#freight" data-panel>
+          <a class="panel" href="/freight-forwarding/" data-panel>
             <div class="panel-media"><img src="https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e?auto=format&fit=crop&q=72&w=1600" srcset="https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e?auto=format&fit=crop&q=72&w=640 640w, https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e?auto=format&fit=crop&q=72&w=1024 1024w, https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e?auto=format&fit=crop&q=72&w=1600 1600w, https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e?auto=format&fit=crop&q=72&w=2400 2400w" sizes="(max-width: 960px) 100vw, 50vw" alt="Container ship at sea seen from above" loading="lazy" decoding="async"></div>
             <div class="panel-body">
               <span class="panel-index mono">03</span>
@@ -226,7 +276,7 @@
       </div>
     </section>
 
-    <!-- ============ COLD CHAIN ============ -->
+    <!-- ============ COLD CHAIN (teaser) ============ -->
     <section class="cold" id="cold-chain" aria-labelledby="cold-title">
       <div class="wrap cold-grid">
         <div class="cold-media">
@@ -238,37 +288,17 @@
             <div class="temp-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           </div>
         </div>
-
         <div class="cold-content">
           <p class="tag" data-reveal>Cold chain</p>
           <h2 id="cold-title" data-reveal>Preserving quality. Protecting value.</h2>
           <p class="statement" data-reveal>Cold-chain logistics is not simply about maintaining temperature. It is about protecting product integrity throughout the supply chain.</p>
           <p data-reveal>Stratex Logistics is building a growing portfolio of temperature-controlled warehousing infrastructure designed to support businesses handling products where consistency, security and controlled conditions are essential.</p>
-          <p data-reveal>Our facilities are being developed at strategically significant locations, connecting storage infrastructure with major trade and logistics corridors.</p>
-
-          <h3 class="list-head" data-reveal>Cold storage capabilities</h3>
-          <div class="accordion" data-accordion data-reveal>
-            <div class="acc-item">
-              <h4><button class="acc-btn" aria-expanded="true" aria-controls="acc-1" id="acc-1-btn">Temperature-controlled storage<span class="acc-icon" aria-hidden="true"></span></button></h4>
-              <div class="acc-panel" id="acc-1" role="region" aria-labelledby="acc-1-btn"><p>Purpose-built environments designed for temperature-sensitive cargo.</p></div>
-            </div>
-            <div class="acc-item">
-              <h4><button class="acc-btn" aria-expanded="false" aria-controls="acc-2" id="acc-2-btn">Secure warehousing<span class="acc-icon" aria-hidden="true"></span></button></h4>
-              <div class="acc-panel" id="acc-2" role="region" aria-labelledby="acc-2-btn" hidden><p>Controlled facilities designed around product protection and operational reliability.</p></div>
-            </div>
-            <div class="acc-item">
-              <h4><button class="acc-btn" aria-expanded="false" aria-controls="acc-3" id="acc-3-btn">Cargo handling<span class="acc-icon" aria-hidden="true"></span></button></h4>
-              <div class="acc-panel" id="acc-3" role="region" aria-labelledby="acc-3-btn" hidden><p>Structured inbound and outbound processes for efficient movement of goods.</p></div>
-            </div>
-            <div class="acc-item">
-              <h4><button class="acc-btn" aria-expanded="false" aria-controls="acc-4" id="acc-4-btn">Integrated logistics<span class="acc-icon" aria-hidden="true"></span></button></h4>
-              <div class="acc-panel" id="acc-4" role="region" aria-labelledby="acc-4-btn" hidden><p>Seamless coordination between warehousing, customs, transportation and distribution.</p></div>
-            </div>
-            <div class="acc-item">
-              <h4><button class="acc-btn" aria-expanded="false" aria-controls="acc-5" id="acc-5-btn">Scalable infrastructure<span class="acc-icon" aria-hidden="true"></span></button></h4>
-              <div class="acc-panel" id="acc-5" role="region" aria-labelledby="acc-5-btn" hidden><p>A growing network designed to support evolving customer requirements.</p></div>
-            </div>
-          </div>
+          <ul class="ticks" data-stagger>
+            <li><span class="check" aria-hidden="true"></span><span>Temperature-controlled storage</span></li>
+            <li><span class="check" aria-hidden="true"></span><span>Secure warehousing and cargo handling</span></li>
+            <li><span class="check" aria-hidden="true"></span><span>Integrated with customs and freight</span></li>
+          </ul>
+          <a class="link-more" href="/cold-chain/" data-reveal>Explore cold chain <span class="arrow" aria-hidden="true"></span></a>
         </div>
       </div>
     </section>
@@ -285,7 +315,7 @@
       </div>
     </section>
 
-    <!-- ============ INFRASTRUCTURE ============ -->
+    <!-- ============ INFRASTRUCTURE (teaser) ============ -->
     <section class="network" id="infrastructure" aria-labelledby="network-title">
       <div class="network-grid-bg" aria-hidden="true"></div>
       <div class="wrap network-grid">
@@ -293,56 +323,12 @@
           <p class="tag tag-light" data-reveal>Our infrastructure</p>
           <h2 id="network-title" data-reveal>Building a strategic cold-chain network.</h2>
           <p data-reveal>Stratex Logistics is developing cold storage infrastructure across strategically important regions of India. Our current and planned facilities are positioned to serve industrial centres, trade corridors and emerging maritime gateways.</p>
-
-          <div class="sites" data-reveal>
-            <div class="site-tabs" role="tablist" aria-label="Facilities">
-              <button role="tab" id="tab-valsad" aria-controls="site-valsad" aria-selected="true" data-site="valsad">Valsad</button>
-              <button role="tab" id="tab-gandhidham" aria-controls="site-gandhidham" aria-selected="false" tabindex="-1" data-site="gandhidham">Gandhidham</button>
-              <button role="tab" id="tab-vizhinjam" aria-controls="site-vizhinjam" aria-selected="false" tabindex="-1" data-site="vizhinjam">Vizhinjam</button>
-            </div>
-
-            <article class="site-panel" role="tabpanel" id="site-valsad" aria-labelledby="tab-valsad">
-              <header class="site-head">
-                <div>
-                  <h3>Valsad <span>Gujarat</span></h3>
-                  <p class="mono site-coord">20.61°N 72.93°E</p>
-                </div>
-                <span class="pill pill-dev">Under development</span>
-              </header>
-              <p class="site-type">Cold storage warehouse</p>
-              <p>Our Valsad facility represents an important step in the expansion of the Stratex cold-chain network.</p>
-              <p>Located within the industrial ecosystem of South Gujarat, the facility is being developed to provide dependable temperature-controlled storage and integrated logistics support to businesses across the region.</p>
-              <dl class="site-status"><dt>Project status</dt><dd>Ongoing development</dd></dl>
-            </article>
-
-            <article class="site-panel" role="tabpanel" id="site-gandhidham" aria-labelledby="tab-gandhidham" hidden>
-              <header class="site-head">
-                <div>
-                  <h3>Gandhidham <span>Gujarat</span></h3>
-                  <p class="mono site-coord">23.08°N 70.13°E</p>
-                </div>
-                <span class="pill pill-planned">Planned infrastructure</span>
-              </header>
-              <p class="site-type">Cold storage warehouse</p>
-              <p>Gandhidham forms a key component of Stratex Logistics’ future infrastructure strategy.</p>
-              <p>Our planned cold storage facility is intended to strengthen temperature-controlled logistics capabilities within the wider Kutch and Gujarat trade corridor, supporting cargo connected to the region’s industrial and maritime ecosystem.</p>
-              <dl class="site-status"><dt>Project status</dt><dd>Future development</dd></dl>
-            </article>
-
-            <article class="site-panel" role="tabpanel" id="site-vizhinjam" aria-labelledby="tab-vizhinjam" hidden>
-              <header class="site-head">
-                <div>
-                  <h3>Vizhinjam <span>Kerala</span></h3>
-                  <p class="mono site-coord">8.38°N 76.99°E</p>
-                </div>
-                <span class="pill pill-planned">Planned infrastructure</span>
-              </header>
-              <p class="site-type">Cold storage warehouse</p>
-              <p>Stratex Logistics is planning a temperature-controlled warehousing facility in Vizhinjam, Thiruvananthapuram.</p>
-              <p>Positioned within an emerging maritime gateway, the proposed facility forms part of our long-term strategy to develop specialised cold-chain infrastructure along India’s evolving coastal trade network. The project is intended to support importers, exporters, distributors and businesses requiring dependable temperature-controlled storage and logistics connectivity.</p>
-              <dl class="site-status"><dt>Project status</dt><dd>Future development</dd></dl>
-            </article>
-          </div>
+          <ol class="manifest-list home-sites" data-stagger>
+            <li><a href="/infrastructure/#valsad"><span class="m-name">Valsad<small>Gujarat</small></span><span class="pill pill-dev">Under development</span></a></li>
+            <li><a href="/infrastructure/#gandhidham"><span class="m-name">Gandhidham<small>Gujarat</small></span><span class="pill pill-planned">Planned</span></a></li>
+            <li><a href="/infrastructure/#vizhinjam"><span class="m-name">Vizhinjam<small>Kerala</small></span><span class="pill pill-planned">Planned</span></a></li>
+          </ol>
+          <a class="link-more link-more-light" href="/infrastructure/" data-reveal>View our infrastructure <span class="arrow" aria-hidden="true"></span></a>
         </div>
 
         <figure class="network-map" data-map>
@@ -363,9 +349,9 @@
 <path class="route-base" d="M96.0,74.0 L68.0,88.0 L56.0,134.0 L108.0,178.0 L192.0,178.0 L190.0,246.0 L216.0,342.0 L268.0,470.0 L324.0,582.0 L374.0,658.0"/>
 <path class="route" d="M96.0,74.0 L68.0,88.0 L56.0,134.0 L108.0,178.0 L192.0,178.0 L190.0,246.0 L216.0,342.0 L268.0,470.0 L324.0,582.0 L374.0,658.0" pathLength="1"/>
 <text class="sea" x="72.0" y="382.0">Arabian Sea</text>
-<g class="site planned" style="--i:0" data-site="gandhidham"><circle class="halo" cx="105.2" cy="68.8" r="14"/><circle class="dot" cx="105.2" cy="68.8" r="6"/><text class="site-name" x="121.2" y="66.8">Gandhidham</text><text class="site-status" x="121.2" y="83.8">Planned</text></g>
-<g class="site dev" style="--i:1" data-site="valsad"><circle class="halo" cx="217.2" cy="165.6" r="14"/><circle class="dot" cx="217.2" cy="165.6" r="6"/><text class="site-name" x="233.2" y="163.6">Valsad</text><text class="site-status" x="233.2" y="180.6">Under development</text></g>
-<g class="site planned" style="--i:2" data-site="vizhinjam"><circle class="halo" cx="379.6" cy="654.8" r="14"/><circle class="dot" cx="379.6" cy="654.8" r="6"/><text class="site-name" text-anchor="end" x="363.6" y="652.8">Vizhinjam</text><text class="site-status" text-anchor="end" x="363.6" y="669.8">Planned</text></g>
+<a href="/infrastructure/#gandhidham" aria-label="Gandhidham facility details"><g class="site planned" style="--i:0" data-site="gandhidham"><circle class="halo" cx="105.2" cy="68.8" r="14"/><circle class="dot" cx="105.2" cy="68.8" r="6"/><text class="site-name" x="121.2" y="66.8">Gandhidham</text><text class="site-status" x="121.2" y="83.8">Planned</text></g></a>
+<a href="/infrastructure/#valsad" aria-label="Valsad facility details"><g class="site dev" style="--i:1" data-site="valsad"><circle class="halo" cx="217.2" cy="165.6" r="14"/><circle class="dot" cx="217.2" cy="165.6" r="6"/><text class="site-name" x="233.2" y="163.6">Valsad</text><text class="site-status" x="233.2" y="180.6">Under development</text></g></a>
+<a href="/infrastructure/#vizhinjam" aria-label="Vizhinjam facility details"><g class="site planned" style="--i:2" data-site="vizhinjam"><circle class="halo" cx="379.6" cy="654.8" r="14"/><circle class="dot" cx="379.6" cy="654.8" r="6"/><text class="site-name" text-anchor="end" x="363.6" y="652.8">Vizhinjam</text><text class="site-status" text-anchor="end" x="363.6" y="669.8">Planned</text></g></a>
 </svg>
           <figcaption class="map-legend">
             <span><i class="key key-dev" aria-hidden="true"></i>Under development</span>
@@ -376,15 +362,20 @@
       </div>
     </section>
 
-    <!-- ============ CUSTOMS ============ -->
+    <!-- ============ CUSTOMS (teaser) ============ -->
     <section class="customs" id="customs" aria-labelledby="customs-title">
-      <div class="wrap customs-grid">
+      <div class="wrap customs-grid is-short">
         <div class="customs-content">
           <p class="tag" data-reveal>Customs</p>
           <h2 id="customs-title" data-reveal>Precision at the border.</h2>
           <p class="statement" data-reveal>International trade depends on efficient clearance.</p>
-          <p data-reveal>Stratex Logistics provides professional customs clearance services designed to simplify complex import and export procedures and facilitate the timely movement of cargo.</p>
           <p data-reveal>Our customs operations combine documentation management, regulatory coordination and port-level execution to provide customers with greater visibility and control throughout the clearance process.</p>
+          <ul class="ticks" data-stagger>
+            <li><span class="check" aria-hidden="true"></span><span>Import and export customs clearance</span></li>
+            <li><span class="check" aria-hidden="true"></span><span>Customs documentation and compliance support</span></li>
+            <li><span class="check" aria-hidden="true"></span><span>Port and terminal coordination</span></li>
+          </ul>
+          <a class="link-more" href="/customs-clearance/" data-reveal>Explore customs clearance <span class="arrow" aria-hidden="true"></span></a>
         </div>
 
         <figure class="customs-figure img-frame" data-reveal-img data-parallax>
@@ -394,23 +385,10 @@
             <span>We manage the process so our customers can remain focused on their business.</span>
           </figcaption>
         </figure>
-
-        <div class="customs-services">
-          <h3 class="list-head" data-reveal>Customs services</h3>
-          <ul class="service-grid" data-stagger>
-            <li><span class="check" aria-hidden="true"></span>Import customs clearance</li>
-            <li><span class="check" aria-hidden="true"></span>Export customs clearance</li>
-            <li><span class="check" aria-hidden="true"></span>Customs documentation</li>
-            <li><span class="check" aria-hidden="true"></span>Regulatory coordination</li>
-            <li><span class="check" aria-hidden="true"></span>Port and terminal coordination</li>
-            <li><span class="check" aria-hidden="true"></span>Cargo clearance management</li>
-            <li><span class="check" aria-hidden="true"></span>Import and export compliance support</li>
-          </ul>
-        </div>
       </div>
     </section>
 
-    <!-- ============ FREIGHT ============ -->
+    <!-- ============ FREIGHT (teaser) ============ -->
     <section class="freight" id="freight" aria-labelledby="freight-title">
       <div class="freight-media" data-parallax-bg aria-hidden="true">
         <img src="https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e?auto=format&fit=crop&q=72&w=1600" srcset="https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e?auto=format&fit=crop&q=72&w=640 640w, https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e?auto=format&fit=crop&q=72&w=1024 1024w, https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e?auto=format&fit=crop&q=72&w=1600 1600w, https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e?auto=format&fit=crop&q=72&w=2400 2400w" sizes="100vw" alt="" loading="lazy" decoding="async">
@@ -420,22 +398,68 @@
         <div class="freight-card" data-reveal>
           <p class="tag tag-light">Freight forwarding</p>
           <h2 id="freight-title">Connecting origins to destinations.</h2>
-          <p>Freight forwarding forms an integral part of our broader logistics offering.</p>
           <p>Stratex Logistics coordinates cargo movement across domestic and international markets, complementing our customs and warehousing capabilities.</p>
-          <p>Our forwarding solutions are designed to provide customers with a connected logistics experience, from origin to destination.</p>
           <h3 class="list-head">Capabilities</h3>
           <ul class="chip-list">
             <li>Ocean freight</li>
             <li>Import and export shipments</li>
             <li>International cargo coordination</li>
             <li>Domestic transportation coordination</li>
-            <li>End-to-end logistics support</li>
           </ul>
+          <a class="link-more link-more-light" href="/freight-forwarding/">Explore freight forwarding <span class="arrow" aria-hidden="true"></span></a>
         </div>
       </div>
     </section>
 
-    <!-- ============ PHILOSOPHY ============ -->
+    <!-- ============ TESTIMONIALS ============
+         SAMPLE CONTENT: these quotes are placeholders, not real client feedback.
+         Replace them with genuine, approved testimonials before publishing. -->
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title" data-sample>
+      <div class="wrap">
+        <div class="t-head">
+          <div>
+            <p class="tag" data-reveal>What clients say</p>
+            <h2 id="testimonials-title" data-reveal>Trusted with what matters.</h2>
+          </div>
+          <div class="t-controls" data-reveal>
+            <button class="t-btn" type="button" data-t-prev aria-label="Previous testimonial"><span class="arrow" aria-hidden="true"></span></button>
+            <button class="t-btn" type="button" data-t-next aria-label="Next testimonial"><span class="arrow" aria-hidden="true"></span></button>
+          </div>
+        </div>
+      </div>
+      <div class="t-track" data-t-track tabindex="0" aria-label="Testimonials, scroll horizontally">
+        <figure class="t-card is-featured">
+          <span class="t-tag mono">Cold chain · Customs</span>
+          <blockquote><p>Having storage, clearance and onward movement handled by one team took most of the follow-up calls out of our week.</p></blockquote>
+          <figcaption><span class="t-avatar" aria-hidden="true">LM</span><span><strong>Logistics Manager</strong><small>Seafood exporter, Gujarat</small></span></figcaption>
+        </figure>
+        <figure class="t-card">
+          <span class="t-tag mono">Customs clearance</span>
+          <blockquote><p>Documents were checked before filing, which is exactly what we needed to stop avoidable delays at the port.</p></blockquote>
+          <figcaption><span class="t-avatar" aria-hidden="true">IC</span><span><strong>Import Coordinator</strong><small>Food distributor, Maharashtra</small></span></figcaption>
+        </figure>
+        <figure class="t-card">
+          <span class="t-tag mono">Freight forwarding</span>
+          <blockquote><p>Clear communication at every stage. We always knew where our shipment stood.</p></blockquote>
+          <figcaption><span class="t-avatar" aria-hidden="true">SL</span><span><strong>Supply Chain Lead</strong><small>Manufacturer, South Gujarat</small></span></figcaption>
+        </figure>
+        <figure class="t-card">
+          <span class="t-tag mono">Cold chain</span>
+          <blockquote><p>Their focus on controlled conditions from arrival to dispatch is what convinced us.</p></blockquote>
+          <figcaption><span class="t-avatar" aria-hidden="true">PH</span><span><strong>Procurement Head</strong><small>Frozen foods brand</small></span></figcaption>
+        </figure>
+        <figure class="t-card">
+          <span class="t-tag mono">Integrated logistics</span>
+          <blockquote><p>A partner that thinks about the whole journey, not just one leg of it.</p></blockquote>
+          <figcaption><span class="t-avatar" aria-hidden="true">DR</span><span><strong>Director</strong><small>Trading company, Kerala</small></span></figcaption>
+        </figure>
+      </div>
+      <div class="wrap">
+        <div class="t-progress" aria-hidden="true"><span data-t-bar></span></div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT (teaser) ============ -->
     <section class="philosophy" id="about" aria-labelledby="philosophy-title">
       <div class="wrap">
         <div class="philosophy-head">
@@ -445,7 +469,7 @@
           </div>
           <div>
             <p data-reveal>We believe the future of logistics will be defined not only by the movement of goods, but by the quality of the infrastructure supporting that movement.</p>
-            <p data-reveal>Our investments are therefore guided by three principles.</p>
+            <a class="link-more" href="/about/" data-reveal>More about Stratex <span class="arrow" aria-hidden="true"></span></a>
           </div>
         </div>
         <div class="principles" data-stagger>
@@ -468,26 +492,6 @@
       </div>
     </section>
 
-    <!-- ============ VISION ============ -->
-    <section class="vision" id="vision" aria-labelledby="vision-title">
-      <div class="vision-media" data-parallax-bg aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1759216373394-91146ca977c7?auto=format&fit=crop&q=72&w=1600" srcset="https://images.unsplash.com/photo-1759216373394-91146ca977c7?auto=format&fit=crop&q=72&w=640 640w, https://images.unsplash.com/photo-1759216373394-91146ca977c7?auto=format&fit=crop&q=72&w=1024 1024w, https://images.unsplash.com/photo-1759216373394-91146ca977c7?auto=format&fit=crop&q=72&w=1600 1600w, https://images.unsplash.com/photo-1759216373394-91146ca977c7?auto=format&fit=crop&q=72&w=2400 2400w" sizes="100vw" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="vision-shade" aria-hidden="true"></div>
-      <div class="wrap vision-inner">
-        <p class="tag tag-light" data-reveal>Our vision</p>
-        <h2 id="vision-title" data-reveal>Building the infrastructure behind tomorrow’s supply chains.</h2>
-        <div class="vision-cols">
-          <p data-reveal>India’s logistics ecosystem is undergoing a fundamental transformation. As trade expands and supply chains become increasingly specialised, the demand for reliable cold-chain infrastructure and integrated logistics services continues to grow.</p>
-          <p data-reveal>Stratex Logistics is positioning itself at the intersection of this transformation. Through strategic infrastructure investments and integrated logistics capabilities, we are building a platform designed to connect ports, businesses, products and markets more efficiently.</p>
-        </div>
-        <blockquote class="vision-quote">
-          <p data-split-scroll>Our ambition is not simply to move cargo. It is to build the infrastructure that enables businesses to move forward.</p>
-        </blockquote>
-      </div>
-    </section>
-
-    <!-- ============ BRAND BAND ============ -->
     <section class="brandband" aria-labelledby="brand-title">
       <div class="wrap brandband-inner">
         <h2 id="brand-title" class="brand-line" data-reveal>Built for what moves next.</h2>
@@ -503,100 +507,55 @@
       </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
-    <section class="contact" id="contact" aria-labelledby="contact-title">
+    <!-- ============ CONTACT CTA ============ -->
+    <section class="contact home-cta" id="contact" aria-labelledby="contact-title">
       <div class="wrap contact-grid">
         <div class="contact-side">
           <p class="tag tag-light" data-reveal>Connect with us</p>
           <h2 id="contact-title" data-reveal>Let’s build a more connected supply chain.</h2>
           <p data-reveal>Whether you require temperature-controlled warehousing, customs clearance or integrated logistics support, our team is ready to understand your requirements.</p>
-
-          <svg class="contact-route" viewBox="0 0 400 160" aria-hidden="true">
-            <path class="cr-path" pathLength="1" d="M8 130 C 90 130, 110 40, 200 60 S 320 120, 392 30"/>
-            <circle cx="8" cy="130" r="5"/><circle cx="200" cy="60" r="5"/><circle cx="392" cy="30" r="5"/>
-          </svg>
-
-          <dl class="contact-info" data-reveal>
-            <div><dt>Phone</dt><dd><a href="tel:+919567289308">+91 95672 89308</a></dd></div>
-            <!-- Add when confirmed:
-            <div><dt>Email</dt><dd><a href="mailto:info@stratexlogistics.com">info@stratexlogistics.com</a></dd></div>
-            <div><dt>Office</dt><dd>Address line, City, State PIN</dd></div>
-            -->
-          </dl>
+          <div class="cta-actions" data-reveal>
+            <a class="btn btn-accent btn-lg" href="/contact/">Send an enquiry <span class="arrow" aria-hidden="true"></span></a>
+          </div>
         </div>
-
-        <form class="enquiry" id="enquiry-form" action="https://api.web3forms.com/submit" method="POST" novalidate data-reveal>
-          <!-- Web3Forms access key (public by design; enquiries go to the email it was created with) -->
-          <input type="hidden" name="access_key" value="c58848e5-2152-43e1-afcf-7eb249894292">
-          <input type="hidden" name="subject" value="New enquiry from stratexlogistics.com">
-          <input type="hidden" name="from_name" value="Stratex Logistics website">
-          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-          <div class="f-row">
-            <div class="f-field">
-              <input id="f-name" name="name" type="text" autocomplete="name" placeholder=" " required>
-              <label for="f-name">Full name</label>
-              <p class="f-error" id="f-name-err"></p>
-            </div>
-            <div class="f-field">
-              <input id="f-company" name="company" type="text" autocomplete="organization" placeholder=" ">
-              <label for="f-company">Company <span class="opt">(optional)</span></label>
-            </div>
-          </div>
-          <div class="f-row">
-            <div class="f-field">
-              <input id="f-email" name="email" type="email" autocomplete="email" placeholder=" " required>
-              <label for="f-email">Work email</label>
-              <p class="f-error" id="f-email-err"></p>
-            </div>
-            <div class="f-field">
-              <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder=" ">
-              <label for="f-phone">Phone <span class="opt">(optional)</span></label>
-            </div>
-          </div>
-
-          <fieldset class="f-interests">
-            <legend>What do you need help with?</legend>
-            <div class="chips">
-              <label class="chip"><input type="checkbox" name="services[]" value="Cold storage"><span>Cold storage</span></label>
-              <label class="chip"><input type="checkbox" name="services[]" value="Customs clearance"><span>Customs clearance</span></label>
-              <label class="chip"><input type="checkbox" name="services[]" value="Freight forwarding"><span>Freight forwarding</span></label>
-              <label class="chip"><input type="checkbox" name="services[]" value="Integrated logistics"><span>Integrated logistics</span></label>
-            </div>
-          </fieldset>
-
-          <div class="f-field f-area">
-            <textarea id="f-message" name="message" rows="4" placeholder=" " required></textarea>
-            <label for="f-message">Your requirements</label>
-            <p class="f-hint">Cargo type, volumes, locations and timelines help us respond faster.</p>
-            <p class="f-error" id="f-message-err"></p>
-          </div>
-
-          <div class="f-foot">
-            <button class="btn btn-accent btn-lg" type="submit" id="f-submit"><span class="btn-label">Send enquiry</span> <span class="arrow" aria-hidden="true"></span></button>
-            <p class="f-status" id="form-status" role="status" aria-live="polite"></p>
-          </div>
-        </form>
+        <dl class="contact-info" data-reveal>
+          <div><dt>Phone</dt><dd><a href="tel:+919567289308">+91 95672 89308</a></dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:info@stratexlogistics.com">info@stratexlogistics.com</a></dd></div>
+        </dl>
       </div>
+      <!-- On phones the hero's network panel moves here (script.js) -->
+      <div class="wrap manifest-slot" id="manifest-slot"></div>
     </section>
+
   </main>
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="wrap">
       <div class="footer-top">
-        <a class="brand brand-footer" href="#top" aria-label="Stratex Logistics, back to top">
+        <a class="brand brand-footer" href="/" aria-label="Stratex Logistics home">
           <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="currentColor" opacity=".12"/><rect x="7" y="8" width="18" height="4" rx="1" fill="currentColor"/><rect x="7" y="14" width="12" height="4" rx="1" fill="#2AA7D6"/><rect x="13" y="20" width="12" height="4" rx="1" fill="currentColor"/></svg>
           <span class="brand-text"><strong>Stratex</strong> Logistics</span>
         </a>
         <nav class="footer-nav" aria-label="Footer">
-          <a href="#cold-chain">Cold chain</a>
-          <a href="#infrastructure">Infrastructure</a>
-          <a href="#customs">Customs</a>
-          <a href="#freight">Freight forwarding</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href="/cold-chain/">Cold chain</a>
+          <a href="/infrastructure/">Infrastructure</a>
+          <a href="/customs-clearance/">Customs clearance</a>
+          <a href="/freight-forwarding/">Freight forwarding</a>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
         </nav>
+      </div>
+      <div class="footer-contact">
+        <a href="tel:+919567289308">+91 95672 89308</a>
+        <a href="mailto:info@stratexlogistics.com">info@stratexlogistics.com</a>
+        <div class="footer-social">
+          <!-- SOCIAL PROFILES: replace href="#" with each profile URL. Icons whose href is still "#" stay hidden. -->
+          <a href="#" data-social aria-label="Stratex Logistics on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 1 0 5.25 7a1.97 1.97 0 0 0 0-3.94ZM20.44 13.4c0-3.07-1.64-4.5-3.83-4.5a3.3 3.3 0 0 0-3 1.65V8.5h-3.37V20h3.37v-5.7c0-1.5.29-2.96 2.15-2.96 1.83 0 1.86 1.72 1.86 3.06V20h3.38l-.56-6.6Z"/></svg></a>
+          <a href="#" data-social aria-label="Stratex Logistics on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4Zm0 7.76a3.06 3.06 0 1 1 0-6.12 3.06 3.06 0 0 1 0 6.12Zm5.98-7.95a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0ZM21.1 8.2c-.07-1.5-.41-2.83-1.5-3.92-1.09-1.08-2.41-1.42-3.91-1.5-1.55-.09-6.2-.09-7.74 0-1.5.07-2.82.41-3.91 1.5S2.62 6.7 2.54 8.2c-.09 1.55-.09 6.2 0 7.74.07 1.5.41 2.82 1.5 3.91s2.41 1.43 3.91 1.5c1.55.09 6.2.09 7.74 0 1.5-.07 2.83-.41 3.91-1.5 1.09-1.09 1.43-2.41 1.5-3.91.09-1.55.09-6.19 0-7.74Zm-2 9.4a3.16 3.16 0 0 1-1.78 1.78c-1.23.49-4.16.38-5.52.38s-4.3.11-5.52-.38a3.16 3.16 0 0 1-1.78-1.78c-.49-1.23-.38-4.16-.38-5.52s-.11-4.3.38-5.52A3.16 3.16 0 0 1 6.28 4.78c1.23-.49 4.16-.38 5.52-.38s4.3-.11 5.52.38a3.16 3.16 0 0 1 1.78 1.78c.49 1.23.38 4.16.38 5.52s.11 4.3-.38 5.52Z"/></svg></a>
+          <a href="#" data-social aria-label="Stratex Logistics on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14A28 28 0 0 0 14.64 2C11.93 2 10 3.66 10 6.7v2.8H7v4h3V22h4v-8.5Z"/></svg></a>
+          <a href="#" data-social aria-label="Stratex Logistics on X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.69 3h3.07l-6.71 7.67L22 21h-6.18l-4.84-6.33L5.44 21H2.37l7.18-8.2L2 3h6.34l4.37 5.78L17.69 3Zm-1.08 16.18h1.7L7.33 4.73H5.5l11.11 14.45Z"/></svg></a>
+        </div>
       </div>
       <p class="footer-word" aria-hidden="true">STRATEX</p>
       <div class="footer-bottom">
@@ -606,7 +565,7 @@
     </div>
   </footer>
 
-  <script src="js/motion.min.js" defer></script>
-  <script src="script.js" defer></script>
+  <script src="/js/motion.min.js" defer></script>
+  <script src="/script.js" defer></script>
 </body>
 </html>

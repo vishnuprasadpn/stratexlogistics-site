@@ -34,6 +34,20 @@
   /* ---------- Footer year ---------- */
   var y = $('#year'); if (y) y.textContent = new Date().getFullYear();
 
+  /* ---------- Network panel: hero on larger screens, end of page on phones ---------- */
+  var manifest = $('.manifest'), manifestSlot = $('#manifest-slot');
+  if (manifest && manifestSlot) {
+    var manifestHome = manifest.parentNode;
+    var phone = window.matchMedia('(max-width: 640px)');
+    var placeManifest = function () {
+      (phone.matches ? manifestSlot : manifestHome).appendChild(manifest);
+    };
+    /* Off-screen at load on phones, so reveal it on scroll instead of with the hero */
+    if (phone.matches) { manifest.removeAttribute('data-hero'); manifest.setAttribute('data-reveal', ''); }
+    placeManifest();
+    if (phone.addEventListener) phone.addEventListener('change', placeManifest); else phone.addListener(placeManifest);
+  }
+
   /* ---------- Header state ---------- */
   var header = $('#header');
   function onScroll() { header.classList.toggle('scrolled', window.scrollY > 24); }
@@ -64,35 +78,19 @@
     });
   });
 
-  /* ---------- Active nav indicator ---------- */
-  var navLinks = $$('[data-nav]');
+  /* ---------- Active nav indicator: underline the current page's link ---------- */
   var indicator = $('.nav-indicator');
+  var current = $('.nav-list a[aria-current="page"]');
   function moveIndicator(link) {
     if (!indicator) return;
-    if (!link) { indicator.style.opacity = '0'; return; }
+    if (!link || small) { indicator.style.opacity = '0'; return; }
     var navBox = nav.getBoundingClientRect(), b = link.getBoundingClientRect();
     indicator.style.width = b.width + 'px';
     indicator.style.transform = 'translateX(' + (b.left - navBox.left) + 'px)';
     indicator.style.opacity = '1';
   }
-  var sectionMap = {};
-  navLinks.forEach(function (l) { sectionMap[l.getAttribute('href').slice(1)] = l; });
-  var extra = { vision: 'about', services: null, intro: null, top: null, contact: null };
-  var current = null;
-  function setActive(id) {
-    var key = Object.prototype.hasOwnProperty.call(extra, id) ? extra[id] : id;
-    var link = key ? sectionMap[key] : null;
-    if (link === current) return;
-    current = link;
-    navLinks.forEach(function (l) { l.setAttribute('aria-current', l === link ? 'true' : 'false'); });
-    moveIndicator(link);
-  }
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting) setActive(en.target.id); });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    $$('main > section[id]').forEach(function (s) { io.observe(s); });
-  }
+  moveIndicator(current);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { moveIndicator(current); });
   window.addEventListener('resize', function () { moveIndicator(current); });
 
   /* ---------- Service panels ---------- */
@@ -160,9 +158,41 @@
       if (n) { e.preventDefault(); selectSite(n.dataset.site, true); }
     });
   });
-  if (chart) $$('.site', chart).forEach(function (s) { s.addEventListener('click', function () { selectSite(s.dataset.site); }); });
-  $$('[data-site-link]').forEach(function (a) { a.addEventListener('click', function () { selectSite(a.dataset.siteLink); }); });
-  selectSite('valsad');
+  if (tabs.length) {
+    if (chart) $$('.site', chart).forEach(function (s) { s.addEventListener('click', function () { selectSite(s.dataset.site); }); });
+    $$('[data-site-link]').forEach(function (a) { a.addEventListener('click', function () { selectSite(a.dataset.siteLink); }); });
+    selectSite('valsad');
+  } else if (chart) {
+    /* No tabs: every site is shown at full strength and links to its facility section */
+    $$('.site', chart).forEach(function (s) { s.classList.add('is-active'); });
+  }
+
+  /* ---------- Testimonials carousel ---------- */
+  $$('[data-t-track]').forEach(function (track) {
+    var section = track.closest('section');
+    var prev = $('[data-t-prev]', section), next = $('[data-t-next]', section), bar = $('[data-t-bar]', section);
+    function step() { var c = track.querySelector('.t-card'); return c ? c.getBoundingClientRect().width + 16 : track.clientWidth; }
+    function update() {
+      var max = track.scrollWidth - track.clientWidth;
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft >= max - 2;
+      if (bar) {
+        var vis = track.clientWidth / track.scrollWidth;
+        bar.style.width = (vis * 100) + '%';
+        bar.style.transform = 'translateX(' + (max > 0 ? (track.scrollLeft / max) * ((1 - vis) / vis) * 100 : 0) + '%)';
+      }
+    }
+    function go(dir) { track.scrollBy({ left: dir * step(), behavior: reduce ? 'auto' : 'smooth' }); }
+    if (prev) prev.addEventListener('click', function () { go(-1); });
+    if (next) next.addEventListener('click', function () { go(1); });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+    });
+    track.addEventListener('scroll', function () { requestAnimationFrame(update); }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  });
 
   /* ---------- Scroll-lit words (runs even without Motion) ---------- */
   function litWords(group) {
@@ -355,10 +385,26 @@
         return;
       }
 
-      var data = new FormData(form);
-      var services = data.getAll('services[]');
-      data.delete('services[]');
-      data.append('services', services.length ? services.join(', ') : 'Not specified');
+      /* Rebuild the payload so the owner's email reads as a tidy, labelled summary */
+      var raw = new FormData(form);
+      var val = function (k) { return String(raw.get(k) || '').trim(); };
+      var services = raw.getAll('services[]');
+      var name = val('name'), company = val('company'), email = val('email');
+      var data = new FormData();
+      data.append('access_key', val('access_key'));
+      data.append('subject', 'New enquiry: ' + name + (company ? ' (' + company + ')' : '') +
+        (services.length ? ' | ' + services.join(', ') : ''));
+      data.append('from_name', 'Stratex Logistics Website');
+      data.append('replyto', email);
+      if (raw.get('botcheck')) data.append('botcheck', 'on');
+      data.append('Name', name);
+      data.append('Company', company || 'Not provided');
+      data.append('Email', email);
+      data.append('Phone', val('phone') || 'Not provided');
+      data.append('Services required', services.length ? services.join(', ') : 'Not specified');
+      data.append('Requirements', val('message'));
+      data.append('Submitted', new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' }) + ' IST');
+      data.append('Page', location.href.split('#')[0]);
 
       submit.disabled = true;
       label.textContent = 'Sending…';
